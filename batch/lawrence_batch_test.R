@@ -19,10 +19,10 @@ data_env <- new.env()
 
 # Callback Function, its gonna process the chunked data
 f <- function(x, pos) {
-  #test_dat <- sf::st_as_sf(x, coords = c("longitude", "latitude"), crs = crs_dd)
+  test_dat <- sf::st_as_sf(x, coords = c("longitude", "latitude"), crs = crs_dd)
 
   df_elev_aws <- get_elev_point(test_dat, prj = crs_dd, src = "aws", z=10)
-  data_env$data <- rbind(data, df_elev_aws)
+  data_env$data <- rbind(data_env$data, df_elev_aws)
 
   #df_elev_epqs <- get_elev_point(x, prj = crs_dd, src = "epqs")
   #data_env$data <- rbind(data, df_elev_epqs)
