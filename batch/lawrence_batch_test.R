@@ -12,7 +12,7 @@ library(dplyr)
 
 
 # ALTERED CODE
-filePath = "~/Personal/DataSquad/helicopter-data/truncate_tracts_5000.csv"
+filePath = "~/Personal/DataSquad/helicopter-data/truncate_tracts_50k.csv"
 crs_dd <- 4326
 data <- data.frame()
 data_env <- new.env()
@@ -28,7 +28,7 @@ f <- function(x, pos) {
   #data_env$data <- rbind(data, df_elev_epqs)
 }
 
-read_csv_chunked(filePath, DataFrameCallback$new(f), chunk_size = 500)
+read_csv_chunked(filePath, DataFrameCallback$new(f), chunk_size = 10000)
 # read_delim_chunked('~/Personal/DataSquad/helicopter-data/test.csv', delim = ',', skip = 0, DataFrameCallback$new(f),)
 
 data <- data_env$data

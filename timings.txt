@@ -1,0 +1,2 @@
+Timings for 50k
+Timing for Batch (10k per batch):

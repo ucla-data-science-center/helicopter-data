@@ -1,11 +1,15 @@
 library(tidyverse)
 library(elevatr)
 library(sf)
-dat = read_csv('/Users/hzy/Desktop/23fall/DSC/R code refactorization/truncate_tracts_updated.csv') # this file is also located in the server
+dat = read_csv('./truncate_tracts.csv') # this file is also located in the server
 head(dat)
 
 colnames(dat)[which(names(dat) == "geometry")] <-"latitude"
 colnames(dat)[which(names(dat) == "GEOID")] <-"longitude"
+
+dat$longitude<-gsub(")","",as.character(dat$longitude))
+dat$latitude<-gsub("c\(","",as.character(dat$latitude))
+
 
 crs_dd <- 4326
 
