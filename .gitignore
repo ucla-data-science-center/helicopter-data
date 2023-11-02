@@ -2,5 +2,9 @@
 .Rhistory
 .RData
 .Ruserdata
+<<<<<<< HEAD
 *truncate_tracts*
 *test*
+=======
+*truncate_tracts*.csv
+>>>>>>> main

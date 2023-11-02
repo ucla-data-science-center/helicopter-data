@@ -1,0 +1,33 @@
+── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.3     ✔ readr     2.1.4
+✔ forcats   1.0.0     ✔ stringr   1.5.0
+✔ ggplot2   3.4.4     ✔ tibble    3.2.1
+✔ lubridate 1.9.3     ✔ tidyr     1.3.0
+✔ purrr     1.0.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+elevatr v0.99.0 NOTE: Version 0.99.0 of 'elevatr' uses 'sf' and 'terra'.  Use 
+of the 'sp', 'raster', and underlying 'rgdal' packages by 'elevatr' is being 
+deprecated; however, get_elev_raster continues to return a RasterLayer.  This 
+will be dropped in future versions, so please plan accordingly.
+Linking to GEOS 3.10.2, GDAL 3.4.2, PROJ 8.2.1; sf_use_s2() is TRUE
+here() starts at /Users/lawrencetlee/Personal/DataSquad/helicopter-data
+[1] "/Users/lawrencetlee/Personal/DataSquad/helicopter-data/data/truncate_tracts_5k.csv"
+Rows: 5233 Columns: 16
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (8): aircraftRegistration, flight_id, source, agency, model_name, yr_mo...
+dbl  (7): groundSpeed, heading, altitude, verticalRate, squawkCode, longitud...
+dttm (1): timestamp
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Warning message:
+One or more parsing issues, call `problems()` on your data frame for details,
+e.g.:
+  dat <- vroom(...)
+  problems(dat) 
+Mosaicing & Projecting
+Note: Elevation units are in meters
