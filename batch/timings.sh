@@ -3,8 +3,9 @@
 BATCH=$(pwd)
 
 cd ../data
-
-unzip truncate_tracts.zip
+if ! ls | grep -qE "truncate_tracts.*csv"; then
+    unzip truncate_tracts.zip;
+fi
 
 cd $BATCH
 

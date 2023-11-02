@@ -1,20 +1,45 @@
 Timings for 5k Entries, Batch size of 1000:
 
-real	0m22.964s
-user	0m10.164s
-sys	0m0.634s
-\nTiming fo 5k Entries, Pure AWS:
+real	0m25.994s
+user	0m9.775s
+sys	0m0.560s
 
-real	0m9.612s
-user	0m6.454s
-sys	0m0.382s
-\nTimings for 10k Entries, Batch size of 5000:
+Timing fo 5k Entries, Pure AWS:
 
-real	0m13.868s
-user	0m7.952s
-sys	0m0.375s
-\nTiming fo 10k Entries, Pure AWS:
+real	0m9.175s
+user	0m6.286s
+sys	0m0.332s
 
-real	0m9.830s
-user	0m6.447s
-sys	0m0.359s
+Timings for 10k Entries, Batch size of 5000:
+
+real	0m20.290s
+user	0m7.835s
+sys	0m0.384s
+
+Timing fo 10k Entries, Pure AWS:
+
+real	0m11.670s
+user	0m6.430s
+sys	0m0.343s
+Timings for 50k Entries, Batch size of 10000:
+
+real	7m12.666s
+user	4m47.709s
+sys	0m34.916s
+
+Timing fo 50k Entries, Pure AWS:
+
+real	0m28.091s
+user	0m21.902s
+sys	0m2.561s
+Timings for 150k Entries, Batch size of 50000:
+
+real	9m23.920s
+user	6m34.690s
+sys	1m0.114s
+
+Timing fo 150k Entries, Pure AWS:
+
+real	0m54.492s
+user	0m48.602s
+sys	0m8.008s
