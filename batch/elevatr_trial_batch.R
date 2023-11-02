@@ -12,9 +12,6 @@ library(here)
 
 
 # ALTERED CODE
-<<<<<<< HEAD:batch/lawrence_batch_test.R
-filePath = "~/Personal/DataSquad/helicopter-data/truncate_tracts_50k.csv"
-=======
 args <- commandArgs(trailingOnly = TRUE)
 
 dataset <- "5k"
@@ -29,7 +26,6 @@ if(length(args) == 0){
    else if (dataset == '150k') chunk <- 50000
 }
 filePath <- here(paste("data/truncate_tracts_", dataset, ".csv", sep = ""))
->>>>>>> main:batch/elevatr_trial_batch.R
 crs_dd <- 4326
 data <- data.frame()
 data_env <- new.env()
@@ -45,11 +41,7 @@ f <- function(x, pos) {
   #data_env$data <- rbind(data, df_elev_epqs)
 }
 
-<<<<<<< HEAD:batch/lawrence_batch_test.R
-read_csv_chunked(filePath, DataFrameCallback$new(f), chunk_size = 10000)
-=======
 read_csv_chunked(filePath, DataFrameCallback$new(f), chunk_size = chunk)
->>>>>>> main:batch/elevatr_trial_batch.R
 # read_delim_chunked('~/Personal/DataSquad/helicopter-data/test.csv', delim = ',', skip = 0, DataFrameCallback$new(f),)
 
 data <- data_env$data
