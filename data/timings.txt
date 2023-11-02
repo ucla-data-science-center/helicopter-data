@@ -1,0 +1,1 @@
+Timings for 150k Entries, Batch size of 50000:
