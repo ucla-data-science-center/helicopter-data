@@ -3,7 +3,7 @@ library(elevatr)
 library(sf)
 library(readr)
 library(dplyr)
-
+library(here)
 # ORIGINAL CODE
 # dat = read_csv('~/Personal/DataSquad/R-Code-Refactorization/test.csv') # this file is also located in the server
 # crs_dd <- 4326
@@ -12,7 +12,20 @@ library(dplyr)
 
 
 # ALTERED CODE
-filePath = "~/Personal/DataSquad/helicopter-data/truncate_tracts_5000.csv"
+args <- commandArgs(trailingOnly = TRUE)
+
+dataset <- "5k"
+chunk <- 1000
+
+if(length(args) == 0){
+    dataset <- "5k"
+} else {
+   dataset <- args[1]
+   if (dataset == '10k') chunk <- 5000
+   else if (dataset == '50k') chunk <- 10000
+   else if (dataset == '150k') chunk <- 50000
+}
+filePath <- here(paste("data/truncate_tracts_", dataset, ".csv", sep = ""))
 crs_dd <- 4326
 data <- data.frame()
 data_env <- new.env()
@@ -28,7 +41,7 @@ f <- function(x, pos) {
   #data_env$data <- rbind(data, df_elev_epqs)
 }
 
-read_csv_chunked(filePath, DataFrameCallback$new(f), chunk_size = 500)
+read_csv_chunked(filePath, DataFrameCallback$new(f), chunk_size = chunk)
 # read_delim_chunked('~/Personal/DataSquad/helicopter-data/test.csv', delim = ',', skip = 0, DataFrameCallback$new(f),)
 
 data <- data_env$data

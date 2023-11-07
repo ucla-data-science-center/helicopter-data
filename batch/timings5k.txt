@@ -1,0 +1,2 @@
+Timings for 5k Entries, Batch size of 1000:
+hi
